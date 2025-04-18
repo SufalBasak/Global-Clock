@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Clock</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Galaxy Background Elements -->
+    <div class="galaxy">
+      <div class="stars"></div>
+      <div class="earth-orbit">
+        <div class="earth"></div>
+        <div class="moon-orbit">
+          <div class="moon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="container">
+      <h1>🌌 Galaxy Global Clock</h1>
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('clock')">Clock</div>
+        <div class="tab" onclick="switchTab('stopwatch')">Stopwatch</div>
+        <div class="tab" onclick="switchTab('timer')">Timer</div>
+        <div class="tab" onclick="switchTab('alarm')">Alarm</div>
+      </div>
+
+      <div id="clock" class="feature active">
+        <div class="time-display" id="liveClock"></div>
+      </div>
+
+      <div id="stopwatch" class="feature">
+        <div class="time-display" id="stopwatchDisplay">00:00:00</div>
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+      </div>
+
+      <div id="timer" class="feature">
+        <input
+          type="number"
+          id="timerInput"
+          class="input-time"
+          placeholder="Seconds"
+        />
+        <div class="time-display" id="timerDisplay">00:00</div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+
+      <div id="alarm" class="feature">
+        <input type="time" id="alarmTime" class="input-time" />
+        <button onclick="setAlarm()">Set Alarm</button>
+        <div id="alarmStatus"></div>
+      </div>
+
+      <footer>🚀 Developed by: Sufal Basak with ❤️</footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

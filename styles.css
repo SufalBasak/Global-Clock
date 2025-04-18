@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Galaxy Animation Background */
+/* Galaxy Background Container */
+.galaxy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #000 0%, #020111 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Animated Stars */
+.stars {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: 0 0 2px #fff, 100px 200px 1px #fff, 200px 400px 2px #fff,
+    300px 100px 1px #fff, 400px 300px 2px #fff, 500px 500px 1px #fff,
+    600px 200px 2px #fff, 700px 400px 1px #fff, 800px 100px 2px #fff,
+    900px 300px 1px #fff;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Twinkling Animation */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Earth Orbit */
+.earth-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin: -150px 0 0 -150px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit 60s linear infinite;
+}
+
+/* Earth */
+.earth {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg")
+    no-repeat center/cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* Moon Orbit */
+.moon-orbit {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: 40px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit 10s linear infinite;
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: -7.5px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg")
+    no-repeat center/cover;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #fff;
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stars {
+  background: url("https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/stars.png")
+    repeat;
+  animation: moveStars 200s linear infinite;
+}
+
+.twinkling {
+  background: url("https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/twinkling.png")
+    repeat;
+  animation: moveTwinkling 100s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@keyframes moveTwinkling {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(20, 20, 40, 0.8);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  margin: 5vh auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #6b46c1;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #29294d;
+  border-radius: 10px;
+  margin: 0.25rem;
+  transition: background 0.3s;
+}
+
+.tab:hover {
+  background: #3b3b6d;
+}
+.active {
+  background: #6b46c1;
+}
+
+.feature {
+  display: none;
+}
+.feature.active {
+  display: block;
+}
+
+.time-display {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.input-time {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #6b46c1;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #553c9a;
+}
+
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media screen and (max-width: 600px) {
+  .time-display {
+    font-size: 2rem;
+  }
+}
